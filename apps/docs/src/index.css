@@ -1,0 +1,540 @@
+html,
+body,
+#root,
+.ant-app {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════
+   暗色主题（默认）
+═══════════════════════════════════════════ */
+:root {
+  --background: #17191C;
+  --foreground: #d0d2d8;
+  --card: #222427;
+  --card-foreground: #d0d2d8;
+  --popover: #222427;
+  --popover-foreground: #d0d2d8;
+  --primary: #5264E0;
+  --primary-foreground: #ffffff;
+  --secondary: #26282C;
+  --secondary-foreground: #d0d2d8;
+  --muted: #26282C;
+  --muted-foreground: #8a8f99;
+  --accent: #26282C;
+  --accent-foreground: #d0d2d8;
+  --destructive: #FF6464;
+  --destructive-foreground: #ffffff;
+  --border: #323640;
+  --input: #1d1f23;
+  --ring: #5264E0;
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar-background: #17191C;
+  --sidebar-foreground: var(--ds-text-secondary);
+  --sidebar-primary: #5264E0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #26282C;
+  --sidebar-accent-foreground: var(--ds-text-primary);
+  --sidebar-border: #323640;
+  --sidebar-ring: #5264E0;
+
+  /* ══ 背景层级 ══ */
+  --ds-bg-base: #17191C;
+  --ds-bg-sidebar: #17191C;
+  --ds-bg-header: #17191C;
+  --ds-bg-card: #222427;           /* 内容面板背景 */
+  --ds-bg-elevated: #2C2E31;      /* 卡片组件背景 / 浮层 */
+  --ds-bg-overlay: rgba(0, 0, 0, 0.6);
+  --ds-bg-input: #1d1f23;
+  --ds-bg-hover: #2a2c30;
+  --ds-content-bg: rgba(255,255,255,0.02);
+
+  /* ══ 品牌色 ══ */
+  --ds-primary: #5264E0;
+  --ds-primary-hover: #6B80F0;
+  --ds-primary-active: #3F50C0;
+  --ds-primary-subtle: rgba(82, 100, 224, 0.12);
+  --ds-primary-subtle-hover: rgba(82, 100, 224, 0.18);
+  --ds-primary-border: rgba(82, 100, 224, 0.35);
+
+  /* ══ 语义色 ══ */
+  --ds-success: #43CB89;
+  --ds-success-bg: rgba(52, 199, 126, 0.15);
+  --ds-warning: #FFA564;
+  --ds-warning-bg: rgba(240, 160, 48, 0.12);
+  --ds-danger: #FF6464;
+  --ds-danger-bg: rgba(229, 80, 80, 0.12);
+  --ds-info: #5264E0;
+  --ds-info-bg: rgba(82, 100, 224, 0.12);
+  --ds-neutral: #8a8f99;
+  --ds-neutral-bg: rgba(200, 205, 215, 0.1);
+
+  /* ══ 文字色 ══ */
+  --ds-text-primary: #f2f3f5;
+  --ds-text-secondary: #8a8f99;
+  --ds-text-tertiary: #6d717a;
+  --ds-text-inverse: #ffffff;
+  --ds-text-link: #5264E0;
+  --ds-text-error: #FF8A8A;
+  --ds-text-success: #6DE0A8;
+
+  /* ══ 边框 ══ */
+  --ds-border: #323640;
+  --ds-border-hover: #5b62b8;
+  --ds-border-active: #5264E0;
+  --ds-border-muted: #3a3f4d;
+  --ds-divider: #323640;
+
+  /* ══ Header ══ */
+  --ds-header-border: rgba(255,255,255,0.1);
+  --ds-header-button-bg: rgba(255,255,255,0.1);
+
+  /* ══ Sidebar ══ */
+  --ds-sidebar-item-hover: rgba(255,255,255,0.04);
+  --ds-sidebar-item-active: rgba(255,255,255,0.08);
+
+  /* ══ 布局尺寸 ══ */
+  --ds-header-height: 56px;
+  --ds-sidebar-width: 200px;
+  --ds-sidebar-collapsed-width: 56px;
+
+  /* ══ 阴影层级 ══ */
+  --ds-shadow-z0: none;
+  --ds-shadow-z1: 0 1px 2px rgba(0,0,0,0.06);
+  --ds-shadow-z2: 0 2px 8px rgba(0,0,0,0.10);
+  --ds-shadow-z4: 0 4px 16px rgba(0,0,0,0.14);
+  --ds-shadow-z8: 0 8px 32px rgba(0,0,0,0.22);
+  --ds-shadow-z16: 0 16px 48px rgba(0,0,0,0.28);
+
+  /* ══ 聚焦环 ══ */
+  --ds-focus-ring: 0 0 0 2px var(--ds-bg-base), 0 0 0 4px var(--ds-primary);
+
+  /* ══ 补充间距 ══ */
+  --ds-space-0-5: 2px;
+  --ds-space-7: 28px;
+
+  /* ══ 基础圆角 ══ */
+  --ds-radius-sm: 4px;
+  --ds-radius-md: 6px;
+  --ds-radius-lg: 8px;
+  --ds-radius-xl: 12px;
+}
+
+/* ═══════════════════════════════════════════
+   亮色主题
+═══════════════════════════════════════════ */
+:root[data-theme="light"] {
+  --background: #f0f1f5;
+  --foreground: #1d1f23;
+  --card: #ffffff;
+  --card-foreground: #1d1f23;
+  --popover: #ffffff;
+  --popover-foreground: #1d1f23;
+  --primary: #5264E0;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f6fa;
+  --secondary-foreground: #1d1f23;
+  --muted: #f5f6fa;
+  --muted-foreground: #5c5f66;
+  --accent: #f5f6fa;
+  --accent-foreground: #1d1f23;
+  --destructive: #FF6464;
+  --destructive-foreground: #ffffff;
+  --border: #e4e5e9;
+  --input: #f5f6fa;
+  --ring: #5264E0;
+
+  /* Sidebar */
+  --sidebar-background: #f0f1f5;
+  --sidebar-foreground: var(--ds-text-secondary);
+  --sidebar-primary: #5264E0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5f6fa;
+  --sidebar-accent-foreground: var(--ds-text-primary);
+  --sidebar-border: #e4e5e9;
+  --sidebar-ring: #5264E0;
+
+  /* ══ 背景层级 ══ */
+  --ds-bg-base: #f0f1f5;
+  --ds-bg-sidebar: #f0f1f5;
+  --ds-bg-header: #f0f1f5;
+  --ds-bg-card: #ffffff;
+  --ds-bg-elevated: #f5f6fa;
+  --ds-bg-overlay: rgba(0, 0, 0, 0.4);
+  --ds-bg-input: #f5f6fa;
+  --ds-bg-hover: #f5f6fa;
+  --ds-content-bg: rgba(0,0,0,0.01);
+
+  /* ══ 品牌色 ══ */
+  --ds-primary: #5264E0;
+  --ds-primary-hover: #3F50C0;
+  --ds-primary-active: #2D40B0;
+  --ds-primary-subtle: rgba(82, 100, 224, 0.08);
+  --ds-primary-subtle-hover: rgba(82, 100, 224, 0.14);
+  --ds-primary-border: rgba(82, 100, 224, 0.25);
+
+  /* ══ 语义色 ══ */
+  --ds-success: #43CB89;
+  --ds-success-bg: rgba(52, 199, 126, 0.12);
+  --ds-warning: #FFA564;
+  --ds-warning-bg: rgba(240, 160, 48, 0.08);
+  --ds-danger: #FF6464;
+  --ds-danger-bg: rgba(229, 80, 80, 0.08);
+  --ds-info: #5264E0;
+  --ds-info-bg: rgba(82, 100, 224, 0.08);
+  --ds-neutral: #8c8c8c;
+  --ds-neutral-bg: rgba(0, 0, 0, 0.04);
+
+  /* ══ 文字色 ══ */
+  --ds-text-primary: #3d414a;
+  --ds-text-secondary: #787b84;
+  --ds-text-tertiary: #b8bcc4;
+  --ds-text-inverse: #ffffff;
+  --ds-text-link: #5264E0;
+  --ds-text-error: #D44B4B;
+  --ds-text-success: #3AAA68;
+
+  /* ══ 边框 ══ */
+  --ds-border: #e4e5e9;
+  --ds-border-hover: #d0d2d8;
+  --ds-border-active: #5264E0;
+  --ds-border-muted: #d0d2d8;
+  --ds-divider: #edf0f2;
+
+  /* ══ Header ══ */
+  --ds-header-border: #e4e5e9;
+  --ds-header-button-bg: rgba(0,0,0,0.04);
+
+  /* ══ Sidebar ══ */
+  --ds-sidebar-item-hover: rgba(0,0,0,0.04);
+  --ds-sidebar-item-active: rgba(0,0,0,0.06);
+
+  /* ══ 布局尺寸 ══ */
+  --ds-header-height: 56px;
+  --ds-sidebar-width: 200px;
+  --ds-sidebar-collapsed-width: 56px;
+
+  /* ══ 阴影层级 ══ */
+  --ds-shadow-z0: none;
+  --ds-shadow-z1: 0 1px 2px rgba(0,0,0,0.02);
+  --ds-shadow-z2: 0 2px 8px rgba(0,0,0,0.04);
+  --ds-shadow-z4: 0 4px 16px rgba(0,0,0,0.06);
+  --ds-shadow-z8: 0 8px 32px rgba(0,0,0,0.08);
+  --ds-shadow-z16: 0 16px 48px rgba(0,0,0,0.10);
+}
+
+/* ═══════════════════════════════════════════
+   Sidebar & Header 图标主题适配
+   — 亮色主题下将图标反转为深色（SVG 通过 <img> 加载无法用 currentColor）
+═══════════════════════════════════════════ */
+:root[data-theme="light"] .nav-icon-img {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.55;
+}
+
+/* Light theme active icon — 不透明（匹配 text-primary） */
+:root[data-theme="light"] .nav-icon-img-active {
+  opacity: 1;
+}
+
+/* Dark theme active icon — 反白高亮 */
+:root[data-theme="dark"] .nav-icon-img-active {
+  filter: brightness(0) invert(1);
+}
+
+/* ═══════════════════════════════════════════
+   视口渐入揭示动画 (Staggered Reveal)
+   — section 进入视口时带 fade-up + blur-in
+═══════════════════════════════════════════ */
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 默认：页面加载时渐入（不支持 scroll-driven animation 的浏览器回退） */
+.scroll-section {
+  animation: sectionReveal 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* 支持 scroll-driven 动画 of the browser：改为按滚动位置逐段揭示 */
+@supports (animation-timeline: view()) {
+  .scroll-section {
+    animation-timeline: view();
+    animation-range: entry 5% entry 25%;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Docs 侧边栏 — 子菜单 ul 去掉底色块
+═══════════════════════════════════════════ */
+.docs-sider .ant-menu-inline .ant-menu-sub {
+  background: transparent !important;
+}
+
+/* ═══════════════════════════════════════════
+   Card 投影 & hover — 直接覆盖 AntD 硬编码
+═══════════════════════════════════════════ */
+.ant-card {
+  box-shadow: var(--ds-shadow-z1) !important;
+  transition: box-shadow 0.25s ease;
+}
+.ant-card-hoverable:hover {
+  box-shadow: var(--ds-shadow-z8) !important;
+}
+
+/* prefers-reduced-motion 回退 */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-section {
+    animation: none;
+  }
+  .ant-card {
+    transition: none;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Segmented 选中态优化
+   — 背景过渡保留，文字颜色瞬切，避免暗→白闪烁
+═══════════════════════════════════════════ */
+.ant-segmented .ant-segmented-item-label {
+  transition: none;
+}
+
+/* ═══════════════════════════════════════════
+   Pagination 分页器优化
+   — 去掉页码按钮描边，统一用背景色区分状态
+═══════════════════════════════════════════ */
+.ant-pagination-item {
+  border: none !important;
+  background: transparent;
+}
+.ant-pagination-item:not(.ant-pagination-item-active):hover {
+  background: var(--ds-bg-hover);
+}
+.ant-pagination-item-active {
+  background: var(--ds-primary);
+  border: none !important;
+}
+.ant-pagination-item-active a {
+  color: #fff !important;
+}
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
+  border: none !important;
+  background: transparent;
+}
+.ant-pagination-disabled .ant-pagination-item-link {
+  color: var(--ds-text-tertiary) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ant-segmented .ant-segmented-item-label {
+    transition: none;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   基础样式
+═══════════════════════════════════════════ */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background: var(--ds-bg-base);
+    color: var(--ds-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* 全局交互过渡 — hover/focus 动画（排除所有禁用态：属性+class） */
+  a:not([disabled]):not([aria-disabled]):not([class*="disabled"]),
+  button:not([disabled]):not([class*="disabled"]),
+  input:not([disabled]):not([class*="disabled"]),
+  select:not([disabled]):not([class*="disabled"]),
+  textarea:not([disabled]):not([class*="disabled"]),
+  .ant-btn:not(.ant-btn-disabled):not([disabled]),
+  .ant-menu-item, .ant-segmented-item,
+  [role="button"]:not([aria-disabled="true"]):not([class*="disabled"]),
+  [tabindex]:not([tabindex="-1"]):not([disabled]):not([class*="disabled"]) {
+    transition: background-color 0.15s ease, color 0.15s ease,
+                border-color 0.15s ease, box-shadow 0.15s ease,
+                opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    a, button, input, select, textarea,
+    .ant-btn, .ant-menu-item, .ant-segmented-item,
+    [role="button"], [tabindex]:not([tabindex="-1"]) {
+      transition: none;
+    }
+  }
+
+  /* 全局聚焦环 — 键盘 Tab 导航可见焦点 */
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--ds-focus-ring);
+    border-radius: var(--ds-radius-md, 4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :focus-visible {
+      box-shadow: 0 0 0 2px var(--ds-primary);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════
+   排版工具类
+═══════════════════════════════════════════ */
+@layer utilities {
+  .text-h1 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .text-h2 {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .text-h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  .text-body {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .text-small {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .text-caption {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .text-button {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .text-data {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   动画关键帧
+═══════════════════════════════════════════ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(82, 100, 224, 0.4); }
+  100% { box-shadow: 0 0 0 8px rgba(82, 100, 224, 0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+.animate-slideInRight {
+  animation: slideInRight 0.25s ease-out forwards;
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+/* 骨架屏 shimmer - 使用 CSS 变量适配双主题 */
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--ds-bg-card) 25%, var(--ds-bg-elevated) 50%, var(--ds-bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 1.5s linear infinite;
+}
+
+/* ═══════════════════════════════════════════
+   自定义 Range Slider Thumb（双主题）
+═══════════════════════════════════════════ */
+[data-theme="dark"] input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ds-text-inverse);
+  cursor: pointer;
+  border: 2px solid var(--ds-primary);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+[data-theme="light"] input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ds-primary);
+  cursor: pointer;
+  border: 2px solid var(--ds-text-inverse);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid;
+}
+[data-theme="dark"] input[type="range"]::-moz-range-thumb {
+  background: var(--ds-text-inverse);
+  border-color: var(--ds-primary);
+}
+[data-theme="light"] input[type="range"]::-moz-range-thumb {
+  background: var(--ds-primary);
+  border-color: var(--ds-text-inverse);
+}

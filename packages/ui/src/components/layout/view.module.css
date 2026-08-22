@@ -1,0 +1,109 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--ds-bg-header);
+  overflow: hidden;
+}
+
+/* 顶部导航栏 */
+.header {
+  height: var(--ds-header-height);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  background: var(--ds-bg-header);
+  border-bottom: 1px solid var(--ds-header-border);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Logo + 平台名称容器 */
+.logoWrapper {
+  width: var(--ds-sidebar-width);
+  height: var(--ds-header-height);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Logo 容器 */
+.logo {
+  position: absolute;
+  left: 1px;
+  top: 16px;
+  z-index: 0;
+}
+
+.logoImg {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+/* 分隔竖线 */
+.separator {
+  position: absolute;
+  left: 108px;
+  top: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+/* 平台名称 */
+.platformName {
+  position: absolute;
+  left: 112px;
+  top: 16px;
+  z-index: 1;
+  color: var(--ds-text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: -apple-system, sans-serif;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+/* 弹性空白（含面包屑） */
+.spacer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* 右侧工具栏 */
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 主体功能区域 */
+.body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* 侧边栏包裹层 */
+.sidebarWrapper {
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--ds-bg-sidebar);
+}
+
+/* 右侧内容区 */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  padding: 16px 16px 16px 0;
+  background: transparent;
+  box-sizing: border-box;
+}

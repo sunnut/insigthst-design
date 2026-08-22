@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "deepinsight-fill"; /* Project id 5019172 */
+  src: url('./iconfont.woff2?t=1766047865425') format('woff2'),
+       url('./iconfont.woff?t=1766047865425') format('woff'),
+       url('./iconfont.ttf?t=1766047865425') format('truetype'),
+       url('./iconfont.svg?t=1766047865425#deepinsight') format('svg');
+}
+
+.icon-fill {
+  margin-right: 8px;
+  font-family: "deepinsight-fill" !important;
+  font-size: 18px;
+  color: #8F96A4;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apps-fill:before {
+  content: "\e73e";
+}
+
+.icon-book-open-fill:before {
+  content: "\e741";
+}
+
+.icon-store-fill:before {
+  content: "\e742";
+}
+
+.icon-book-fill:before {
+  content: "\e743";
+}
+
+.icon-delete-bin-fill:before {
+  content: "\e73a";
+}
+
+.icon-pencil-fill:before {
+  content: "\e73b";
+}
+
+.icon-play-fill:before {
+  content: "\e73c";
+}
+
+.icon-file-list-fill:before {
+  content: "\e735";
+}
+
+.icon-tools-fill:before {
+  content: "\e744";
+}
+
+.icon-windy-fill:before {
+  content: "\e731";
+}
+
+.icon-rainy-fill:before {
+  content: "\e732";
+}
+
+.icon-water-percent-fill:before {
+  content: "\e734";
+}
+
+.icon-Collect-on:before {
+  content: "\e730";
+}
+
+.icon-eth-fill:before {
+  content: "\e724";
+}
+
+.icon-admin-fill:before {
+  content: "\e725";
+}
+
+.icon-database-fill:before {
+  content: "\e726";
+}
+
+.icon-group-fill:before {
+  content: "\e727";
+}
+
+.icon-flag-fill:before {
+  content: "\e728";
+}
+
+.icon-pie-chart-fill:before {
+  content: "\e729";
+}
+
+.icon-price-tag-fill:before {
+  content: "\e72a";
+}
+
+.icon-settings-fill:before {
+  content: "\e72b";
+}
+
+.icon-folder-fill:before {
+  content: "\e72c";
+}
+
+.icon-folder1-fill:before {
+  content: "\e72d";
+}
+
+.icon-task-fill:before {
+  content: "\e72e";
+}
+
+.icon-puzzle-fill:before {
+  content: "\e72f";
+}
+

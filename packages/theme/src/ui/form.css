@@ -1,0 +1,85 @@
+/**
+ * 表单控件禁用态 — @insightst-design/theme
+ * 统一 Input / Select / DatePicker / InputNumber 禁用色（--ds-disabled-*）
+ */
+
+/* Input / TextArea */
+input.ant-input[disabled],
+textarea.ant-input[disabled],
+.ant-input[disabled],
+.ant-input-disabled,
+.ant-input-affix-wrapper-disabled,
+.ant-input-affix-wrapper-disabled .ant-input,
+.ant-input-affix-wrapper-disabled input,
+.ant-input-outlined.ant-input-disabled,
+[class*='ant-input'][disabled],
+[class*='ant-input'][class*='disabled'] {
+  color: var(--ds-disabled-text) !important;
+  -webkit-text-fill-color: var(--ds-disabled-text) !important;
+  background-color: var(--ds-disabled-bg) !important;
+  border-color: var(--ds-disabled-border) !important;
+  transition: none !important;
+}
+
+/* Select */
+.ant-select-disabled .ant-select-selector,
+.ant-select-disabled .ant-select-selection-item,
+.ant-select-disabled .ant-select-selection-placeholder,
+[class*='ant-select'][class*='disabled'] .ant-select-selection-item,
+[class*='ant-select'][class*='disabled'] .ant-select-selection-placeholder {
+  color: var(--ds-disabled-text) !important;
+  -webkit-text-fill-color: var(--ds-disabled-text) !important;
+  background-color: var(--ds-disabled-bg) !important;
+  border-color: var(--ds-disabled-border) !important;
+}
+
+.ant-select-disabled .ant-select-arrow,
+.ant-select-disabled .ant-select-clear {
+  color: var(--ds-disabled-text) !important;
+}
+
+/* DatePicker / TimePicker */
+.ant-picker-disabled,
+.ant-picker[disabled],
+[class*='ant-picker'][class*='disabled'] {
+  color: var(--ds-disabled-text) !important;
+  -webkit-text-fill-color: var(--ds-disabled-text) !important;
+  background-color: var(--ds-disabled-bg) !important;
+  border-color: var(--ds-disabled-border) !important;
+}
+
+.ant-picker-disabled .ant-picker-suffix,
+.ant-picker[disabled] .ant-picker-suffix {
+  color: var(--ds-disabled-text) !important;
+}
+
+/* InputNumber */
+.ant-input-number-disabled,
+.ant-input-number[disabled],
+.ant-input-number-disabled .ant-input-number-input,
+[class*='ant-input-number'][class*='disabled'] input {
+  color: var(--ds-disabled-text) !important;
+  -webkit-text-fill-color: var(--ds-disabled-text) !important;
+  background-color: var(--ds-disabled-bg) !important;
+  border-color: var(--ds-disabled-border) !important;
+}
+
+.ant-input-number-disabled .ant-input-number-handler-wrap {
+  background: var(--ds-disabled-bg) !important;
+  border-color: var(--ds-disabled-border) !important;
+}
+/* 表单label字体颜色 */
+.ant-form-item .ant-form-item-label >label{
+  color: var(--ds-text-secondary) !important;
+}
+/* 文本框自动填充颜色 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: transparent !important;
+  background-image: none !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  -webkit-transition: color 99999s ease-out, background-color 99999s ease-out !important;
+  -webkit-transition-delay: 99999s !important;
+}

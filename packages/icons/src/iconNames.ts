@@ -1,0 +1,102 @@
+/** 实心图标名称（来自 fill iconfont） */
+export const FILL_ICON_NAMES = [
+  'apps-fill',
+  'book-open-fill',
+  'store-fill',
+  'book-fill',
+  'delete-bin-fill',
+  'pencil-fill',
+  'play-fill',
+  'file-list-fill',
+  'tools-fill',
+  'windy-fill',
+  'rainy-fill',
+  'water-percent-fill',
+  'Collect-on',
+  'eth-fill',
+  'admin-fill',
+  'database-fill',
+  'group-fill',
+  'flag-fill',
+  'pie-chart-fill',
+  'price-tag-fill',
+  'settings-fill',
+  'folder-fill',
+  'folder1-fill',
+  'task-fill',
+  'puzzle-fill',
+] as const
+
+/** 空心图标名称（来自 line iconfont） */
+export const LINE_ICON_NAMES = [
+  'donut-chart-line',
+  'book-open-line',
+  'apps-line',
+  'book-line',
+  'input-method-line',
+  'edit-2-line',
+  'brain-2-line',
+  'slow-down-line',
+  'function-add-line',
+  'chat-4-line',
+  'node-tree',
+  'line-chart-line',
+  'file-list-3-line',
+  'hard-drive-2-line1',
+  'pause-circle-line',
+  'restart-line',
+  'git-merge-line',
+  'alarm-warning-line',
+  'prohibited-line',
+  'check-line',
+  'computer-line',
+  'draft-line',
+  'password',
+  'delete-bin-line',
+  'hard-drive-2-line',
+  'download-line',
+  'equalizer-2-line',
+  'eye-2-line',
+  'earth-line',
+  'person',
+  'checkbox-blank-line',
+  'close-line',
+  'subtract-line',
+  'Collect_off',
+  'first-aid-kit-line',
+  'route-line',
+  'bard-line',
+  'video-on-line',
+  'search-line',
+  'crosshair-2-line',
+  'a-24-hours-fill',
+  'alert-line',
+  'road-map-line',
+  'window-line1',
+  'terminal-box-line1',
+  'terminal-box-line-2',
+  'instance-line1',
+  'database-2-line1',
+  'settings-3-line1',
+  'price-tag-line',
+  'sticky-note-add-line',
+  'window-line',
+  'flow-chart',
+  'file-copy-line',
+  'play-large-line',
+  'save-line',
+  'reset-left-line',
+  'table-view',
+] as const
+
+export type FillIconName = (typeof FILL_ICON_NAMES)[number]
+export type LineIconName = (typeof LINE_ICON_NAMES)[number]
+export type IconName = FillIconName | LineIconName
+
+const FILL_SET = new Set<string>(FILL_ICON_NAMES)
+
+export function isFillIcon(name: string): boolean {
+  return FILL_SET.has(name)
+}
+
+export const ICON_NAMES = [...FILL_ICON_NAMES, ...LINE_ICON_NAMES] as const

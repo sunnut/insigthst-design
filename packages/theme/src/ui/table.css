@@ -1,0 +1,149 @@
+/**
+ * Table — @insightst-design/theme
+ * 表头列分隔线 + 滚动条 + 选中行 fixed 列叠字修复
+ */
+
+/* 表头列分隔线 — 短竖线，与文字等高，垂直居中 */
+.ant-table-thead > tr > th {
+  position: relative;
+  border-right: none !important;
+  border-inline-end: none !important;
+  box-shadow: none !important;
+}
+
+.ant-table-thead > tr > th::before {
+  display: none !important;
+}
+
+.ant-table-thead > tr > th::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: var(--ds-border);
+}
+
+.ant-table-thead > tr > th:last-child::after {
+  display: none;
+}
+/* 固定列的分割线原antd宽度30px导致是阴影，需要修复为1px */
+.ant-table-wrapper .ant-table-cell-fix:after{
+  top: 50%;
+  width: 1px;
+}
+/* 滚动条 — 与 tokens.css 全局滚动条规范一致 */
+
+.ant-table-wrapper .ant-table {
+  scrollbar-width: thin;
+}
+
+:root .ant-table-wrapper .ant-table,
+[data-theme='dark'] .ant-table-wrapper .ant-table {
+  scrollbar-color: var(--ds-border) transparent;
+}
+
+[data-theme='light'] .ant-table-wrapper .ant-table {
+  scrollbar-color: var(--ds-text-tertiary) transparent;
+}
+
+.ant-table-wrapper .ant-table-body,
+.ant-table-wrapper .ant-table-content {
+  scrollbar-width: thin;
+}
+
+:root .ant-table-wrapper .ant-table-body,
+:root .ant-table-wrapper .ant-table-content,
+[data-theme='dark'] .ant-table-wrapper .ant-table-body,
+[data-theme='dark'] .ant-table-wrapper .ant-table-content {
+  scrollbar-color: var(--ds-border) transparent;
+}
+
+[data-theme='light'] .ant-table-wrapper .ant-table-body,
+[data-theme='light'] .ant-table-wrapper .ant-table-content {
+  scrollbar-color: var(--ds-text-tertiary) transparent;
+}
+
+.ant-table-wrapper .ant-table-body::-webkit-scrollbar,
+.ant-table-wrapper .ant-table-content::-webkit-scrollbar,
+.ant-table-wrapper .ant-table::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.ant-table-wrapper .ant-table-body::-webkit-scrollbar-track,
+.ant-table-wrapper .ant-table-content::-webkit-scrollbar-track,
+.ant-table-wrapper .ant-table::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:root .ant-table-wrapper .ant-table-body::-webkit-scrollbar-thumb,
+:root .ant-table-wrapper .ant-table-content::-webkit-scrollbar-thumb,
+:root .ant-table-wrapper .ant-table::-webkit-scrollbar-thumb,
+[data-theme='dark'] .ant-table-wrapper .ant-table-body::-webkit-scrollbar-thumb,
+[data-theme='dark'] .ant-table-wrapper .ant-table-content::-webkit-scrollbar-thumb,
+[data-theme='dark'] .ant-table-wrapper .ant-table::-webkit-scrollbar-thumb {
+  background: var(--ds-border);
+  border-radius: 3px;
+}
+
+:root .ant-table-wrapper .ant-table-body::-webkit-scrollbar-thumb:hover,
+:root .ant-table-wrapper .ant-table-content::-webkit-scrollbar-thumb:hover,
+:root .ant-table-wrapper .ant-table::-webkit-scrollbar-thumb:hover,
+[data-theme='dark'] .ant-table-wrapper .ant-table-body::-webkit-scrollbar-thumb:hover,
+[data-theme='dark'] .ant-table-wrapper .ant-table-content::-webkit-scrollbar-thumb:hover,
+[data-theme='dark'] .ant-table-wrapper .ant-table::-webkit-scrollbar-thumb:hover {
+  background: var(--ds-text-tertiary);
+}
+
+[data-theme='light'] .ant-table-wrapper .ant-table-body::-webkit-scrollbar-thumb,
+[data-theme='light'] .ant-table-wrapper .ant-table-content::-webkit-scrollbar-thumb,
+[data-theme='light'] .ant-table-wrapper .ant-table::-webkit-scrollbar-thumb,
+[data-theme='light'] .ant-table-wrapper .ant-table-body::-webkit-scrollbar-thumb:hover,
+[data-theme='light'] .ant-table-wrapper .ant-table-content::-webkit-scrollbar-thumb:hover,
+[data-theme='light'] .ant-table-wrapper .ant-table::-webkit-scrollbar-thumb:hover {
+  background: var(--ds-text-tertiary);
+  border-radius: 3px;
+}
+
+/* antd 横向 sticky 假滚动条 */
+.ant-table-wrapper .ant-table-sticky-scroll {
+  background: transparent !important;
+  height: 6px !important;
+}
+
+.ant-table-wrapper .ant-table-sticky-scroll-bar {
+  height: 6px !important;
+  border-radius: 3px !important;
+  background-color: var(--ds-border) !important;
+}
+
+.ant-table-wrapper .ant-table-sticky-scroll-bar:hover,
+.ant-table-wrapper .ant-table-sticky-scroll-bar-active {
+  background-color: var(--ds-text-tertiary) !important;
+}
+
+[data-theme='light'] .ant-table-wrapper .ant-table-sticky-scroll-bar,
+[data-theme='light'] .ant-table-wrapper .ant-table-sticky-scroll-bar:hover,
+[data-theme='light'] .ant-table-wrapper .ant-table-sticky-scroll-bar-active {
+  background-color: var(--ds-text-tertiary) !important;
+}
+
+/* 选中行 + fixed 列：背景须不透明，避免半透明选中色与滚动列叠字 */
+.ant-table-wrapper .ant-table-tbody > tr.ant-table-row-selected > .ant-table-cell {
+  background: color-mix(in srgb, var(--ds-primary) 12%, var(--ds-bg-card));
+}
+
+.ant-table-wrapper .ant-table-tbody > tr.ant-table-row-selected:hover > .ant-table-cell {
+  background: color-mix(in srgb, var(--ds-primary) 18%, var(--ds-bg-card));
+}
+
+[data-theme='light'] .ant-table-wrapper .ant-table-tbody > tr.ant-table-row-selected > .ant-table-cell {
+  background: color-mix(in srgb, var(--ds-primary) 8%, var(--ds-bg-card));
+}
+
+[data-theme='light'] .ant-table-wrapper .ant-table-tbody > tr.ant-table-row-selected:hover > .ant-table-cell {
+  background: color-mix(in srgb, var(--ds-primary) 14%, var(--ds-bg-card));
+}
