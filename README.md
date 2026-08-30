@@ -2,6 +2,10 @@
 
 An Insightst UI component library.
 
+## Example
+
+![Components example](./example.jpg)
+
 ## Structure
 
 - `apps/docs`: Component documentation site (runs on port 3000)
@@ -28,13 +32,3 @@ An Insightst UI component library.
 - `npx changeset version`: Update package versions
 - `npm login`: Log in to npm
 - `npx changeset publish`: Publish the packages to npm
-
-## Components
-
-### Tabs
-
-A customized version of Ant Design's Tabs component with a `borderless` variant.
-
-### Panel
-
-A customized version of Ant Design's Card component with configurable `shadow` levels and rounded corners.
