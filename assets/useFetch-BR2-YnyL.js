@@ -1,0 +1,1 @@
+import{r as e}from"./index-xmebibFO.js";function d(u,o,l){const[f,n]=e.useState(null),[i,a]=e.useState(!1),[s,w]=e.useState(o),[r,m]=e.useState(l),c=e.useCallback(async()=>{try{if(r)return;a(!0);const t=await u(s);t&&n(t),a(!1)}catch(t){throw a(!1),t}},[u,s,r]);e.useEffect(()=>{c()},[c]);const y=e.useCallback(t=>{w(t??{...s}),m(!1)},[s]);return[i,f,n,y,s]}export{d as u};

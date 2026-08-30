@@ -1,0 +1,1 @@
+import{j as r}from"./index-xmebibFO.js";function e(){return r.jsxs("div",{style:{color:"var(--ds-text-primary)"},children:[r.jsx("h3",{style:{fontSize:16,fontWeight:500,marginBottom:12},children:"我的订单"}),r.jsx("p",{style:{color:"var(--ds-text-secondary)",fontSize:14},children:"用户订单列表展示区域"})]})}export{e as default};

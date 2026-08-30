@@ -1,6 +1,0 @@
-{
-  "name": "Insightst Design",
-  "description": "A high-performance UI component library built with Ant Design, Storybook, and Turborepo.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

@@ -1,0 +1,1 @@
+import{j as t}from"./index-xmebibFO.js";function r(){return t.jsxs("div",{style:{color:"var(--ds-text-primary)"},children:[t.jsx("h3",{style:{fontSize:16,fontWeight:500,marginBottom:12},children:"账号设置"}),t.jsx("p",{style:{color:"var(--ds-text-secondary)",fontSize:14},children:"用户偏好与安全设置区域"})]})}export{r as default};
