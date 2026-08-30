@@ -2,6 +2,20 @@
 
 An Insightst UI component library.
 
+## Technology Stack
+
+- **React 19**: Component development and application rendering
+- **TypeScript**: Type-safe development across the monorepo
+- **Vite**: Development server and production bundling for the docs site and playground
+- **Ant Design**: Base UI components and interaction patterns
+- **Tailwind CSS**: Utility-first styling for the documentation site
+- **Three.js**: 3D rendering and visualization support
+- **3d-force-graph**: 3D force-directed graph visualization
+- **Leaflet + React Leaflet**: Interactive map components and map drawing
+- **React Router**: Routing for the documentation site and reusable components
+- **npm Workspaces + Turborepo**: Monorepo package management and task orchestration
+- **Changesets**: Versioning and publishing workflow for packages
+
 ## Example
 
 ![Components example](./example.jpg)
